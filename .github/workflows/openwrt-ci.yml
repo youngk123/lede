@@ -84,7 +84,11 @@ jobs:
           # 
           # 编译arm64固件:
           cat >> .config <<EOF
+          # CONFIG_TARGET_x86 is not set
+          # CONFIG_TARGET_x86_64 is not set
+          # CONFIG_TARGET_x86_64_Generic is not set
           CONFIG_TARGET_ARM64=y
+          CONFIG_TARGET_aarch64=y
           EOF
           # 固件压缩:
           cat >> .config <<EOF
