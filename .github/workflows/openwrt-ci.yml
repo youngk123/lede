@@ -91,10 +91,10 @@ jobs:
           CONFIG_ALL_NONSHARED=y
           CONFIG_DEVEL=y
           CONFIG_AUTOREMOVE=y
-          CONFIG_BPF_TOOLCHAIN_BUILD_LLVM=y
+          #CONFIG_BPF_TOOLCHAIN_BUILD_LLVM=y
           # CONFIG_BPF_TOOLCHAIN_NONE is not set
           CONFIG_BUILDBOT=y
-          CONFIG_COLLECT_KERNEL_DEBUG=y
+          #CONFIG_COLLECT_KERNEL_DEBUG=y
           CONFIG_HAS_BPF_TOOLCHAIN=y
           CONFIG_IB=y
           CONFIG_IMAGEOPT=y
@@ -194,13 +194,13 @@ jobs:
           CONFIG_PACKAGE_luci-app-adbyby-plus=y
           CONFIG_PACKAGE_luci-app-aria2=y
           CONFIG_PACKAGE_luci-app-baidupcs-web=y
-          CONFIG_PACKAGE_luci-app-docker=y
+          #CONFIG_PACKAGE_luci-app-docker=y
           CONFIG_PACKAGE_luci-app-frpc=y
           CONFIG_PACKAGE_luci-app-hd-idle=y
           CONFIG_PACKAGE_luci-app-kodexplorer=y
           CONFIG_PACKAGE_luci-app-minidlna=y
-          CONFIG_PACKAGE_luci-app-openvpn=y
-          CONFIG_PACKAGE_luci-app-openvpn-server=y
+          #CONFIG_PACKAGE_luci-app-openvpn=y
+          #CONFIG_PACKAGE_luci-app-openvpn-server=y
           CONFIG_PACKAGE_luci-app-qbittorrent=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
@@ -230,10 +230,10 @@ jobs:
           CONFIG_PACKAGE_wget=y
           EOF
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
-          # cat >> .config <<EOF
-          # # CONFIG_TARGET_IMAGES_PAD is not set
-          # # CONFIG_VMDK_IMAGES is not set
-          # EOF
+          cat >> .config <<EOF
+          # CONFIG_TARGET_IMAGES_PAD is not set
+          # CONFIG_VMDK_IMAGES is not set
+          EOF
           # 
           # ========================固件定制部分结束========================
           # 
