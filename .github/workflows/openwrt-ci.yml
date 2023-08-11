@@ -84,9 +84,12 @@ jobs:
           # 
           # 编译arm64固件:
           cat >> .config <<EOF
-          CONFIG_TARGET_armvirt=y
-          CONFIG_TARGET_armvirt_64=y
-          CONFIG_TARGET_armvirt_64_Default=y
+          CONFIG_TARGET_ramips=y
+          CONFIG_TARGET_ramips_mt7621=y
+          CONFIG_TARGET_MULTI_PROFILE=y
+          CONFIG_TARGET_DEVICE_ramips_mt7621_DEVICE_netgear_r6220=y
+          CONFIG_TARGET_DEVICE_PACKAGES_ramips_mt7621_DEVICE_netgear_r6220=""
+          CONFIG_ALL_KMODS=y
           EOF
           # 固件压缩:
           cat >> .config <<EOF
@@ -136,7 +139,6 @@ jobs:
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-netgear=y
           EOF
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
           cat >> .config <<EOF
